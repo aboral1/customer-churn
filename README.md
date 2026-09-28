@@ -17,7 +17,7 @@ An end-to-end customer-churn project for a bank. It includes exploratory data an
 Customer Churn/
 ├── data/
 │   └── churn.csv                     # Source dataset
-├── model/
+├── model/                            # Generated locally; not committed
 │   ├── best_churn_model.pkl          # Trained Random Forest model
 │   ├── le_geography.pkl              # Geography label encoder
 │   ├── le_gender.pkl                 # Gender label encoder
@@ -85,13 +85,15 @@ Install the API dependencies:
 pip install -r requirements_api.txt
 ```
 
-The repository includes trained artifacts in `model/`. To recreate them from the dataset, run:
+The `model/` directory is generated locally and is not included in the repository. Generate its required artifacts from the dataset before starting the API:
 
 ```bash
 python train_and_save_model.py
 ```
 
 The training script runs a 540-combination Random Forest grid over 5 folds, so it can take considerably longer than a few minutes depending on the machine.
+
+`main.py` loads these artifacts during startup. It will not start until the training script has created all files in `model/`.
 
 Start the development API:
 
