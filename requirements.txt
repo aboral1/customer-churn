@@ -1,0 +1,19 @@
+# Notebook and model-training dependencies.
+# Use Python 3.9–3.12. These pins match the saved scikit-learn model artifacts.
+
+# Core data-science libraries
+pandas==2.1.4
+numpy==1.26.2
+
+# Visualization
+matplotlib==3.8.2
+seaborn==0.13.0
+
+# Machine learning and model serialization
+scikit-learn==1.3.2
+joblib==1.3.2
+
+# Notebook environment
+jupyter==1.0.0
+notebook==7.0.6
+ipykernel==6.27.1
